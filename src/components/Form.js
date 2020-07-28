@@ -53,7 +53,7 @@ const Form = ({ getWeather }) => {
             objectId: countryValue.objectId,
           },
           population: {
-            $gt: 150000,
+            $gt: 100000,
           },
         })
       );

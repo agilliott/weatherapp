@@ -145,10 +145,9 @@ function App() {
               <Link color="inherit" href={image?.user?.links.html}>
                 {image?.user?.name}
               </Link>{' '}
-              on
+              on{' '}
               <Link color="inherit" href="https://unsplash.com/">
-                {' '}
-                unsplash
+                Unsplash
               </Link>
             </Typography>
           </Grid>

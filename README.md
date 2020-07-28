@@ -1,3 +1,9 @@
+# Weathr.
+
+Find the demo here: [https://weathrapp.netlify.app/](https://weathrapp.netlify.app/)
+
+## CRA
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
