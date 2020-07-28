@@ -58,7 +58,6 @@ const Form = ({ getWeather }) => {
         })
       );
       url += `&where=${where}`;
-      console.log({ url, countryValue: countryValue.objectId });
     }
 
     fetch(url, { headers: myHeaders })
@@ -85,14 +84,14 @@ const Form = ({ getWeather }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [countryValue]);
 
-  console.log({ countries, cities, countryValue });
-
   const handleSubmit = (e) => {
     getWeather(e);
     e.preventDefault();
     setCountryValue(null);
     setCityValue(null);
   };
+
+  const isDisabled = countryValue === null;
   return (
     <form className={classes.form} onSubmit={handleSubmit}>
       <Autocomplete
@@ -132,6 +131,7 @@ const Form = ({ getWeather }) => {
       <Autocomplete
         id="city"
         options={cities}
+        disabled={isDisabled}
         value={cityValue}
         onChange={(event, newValue) => {
           setCityValue(newValue);
@@ -165,7 +165,7 @@ const Form = ({ getWeather }) => {
       />
       <Grid container justify="flex-end">
         <Grid item>
-          <Button variant="outlined" color="primary" type="submit">
+          <Button variant="contained" color="primary" type="submit">
             Submit
           </Button>
         </Grid>
