@@ -1,0 +1,12 @@
+html,
+body {
+  min-height: 100%;
+  min-width: 300px;
+}
+
+html {
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+  transition: background 2s ease-in-out;
+}
