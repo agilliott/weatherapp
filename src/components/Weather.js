@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Typography, Grid } from '@material-ui/core';
 import { convertKelvinTemp, getTempColor } from '../helpers/utils';
 
-const Weather = ({ city, country, error, temperature }) => {
+const Weather = ({ city, country, error, temperature, description }) => {
   const temp = convertKelvinTemp('C', temperature.temp);
   const temp_feels = convertKelvinTemp('C', temperature.feels_like);
   const temp_max = convertKelvinTemp('C', temperature.temp_max);
@@ -13,11 +13,14 @@ const Weather = ({ city, country, error, temperature }) => {
         <Grid container spacing={3}>
           <Grid item xs={12}>
             <Typography
-              variant="h4"
+              variant="h3"
               component="h2"
               style={{ color: getTempColor(temp) }}
             >
               {temp}°C
+            </Typography>
+            <Typography variant="overline" component="h4">
+              {description}
             </Typography>
             {city && country && (
               <Typography variant="h4" component="h2">
