@@ -53,7 +53,7 @@ const Form = ({ getWeather }) => {
             objectId: countryValue.objectId,
           },
           population: {
-            $gt: 100000,
+            $gt: 150000,
           },
         })
       );
@@ -163,10 +163,10 @@ const Form = ({ getWeather }) => {
           );
         }}
       />
-      <Grid container justify="flex-end">
-        <Grid item>
-          <Button variant="contained" color="primary" type="submit">
-            Submit
+      <Grid container justify="center">
+        <Grid item xs={12}>
+          <Button fullWidth variant="contained" color="primary" type="submit">
+            What's the weather?
           </Button>
         </Grid>
       </Grid>
